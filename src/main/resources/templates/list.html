@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #76b2fe, #b69efe);
+            height: 100vh;
+        }
+        .note-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            margin-top: 50px;
+            width: 60%;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .btn-group .btn {
+            margin-right: 10px;
+            width: 150px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+        .btn-success {
+            background-color: #b69efe;
+            border-color: #b69efe;
+        }
+        .btn-success:hover {
+            background-color: #9b85e5;
+            border-color: #8a74d4;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border-color: #dc3545;
+            opacity: 0.85;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+            opacity: 1;
+        }
+        .btn-warning {
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+        .form-check-label {
+            color: #4c4c4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row justify-content-end mt-3 mr-3">
+        <a href="/auth/logout" class="btn btn-outline-dark">Logout</a>
+    </div>
+</div>
+
+<div class="container note-container">
+    <h1 class="mb-4 text-center">List of Notes</h1>
+
+    <div class="d-flex flex-row mb-3 alert alert-info justify-content-between">
+        <a href="/note/add" class="btn btn-success">Add New Note</a>
+        <a href="/note/list" class="btn btn-primary">See full list of notes</a>
+        <div class="p-2">Total Notes: <span th:text="${totalNotes}"></span></div>
+    </div>
+
+    <form th:action="@{/note/searchTitle}" method="get" class="form-inline mb-3">
+        <input type="text" class="form-control mr-2" name="query" placeholder="Search by title" required>
+        <button type="submit" class="btn btn-primary">Find</button>
+    </form>
+
+    <form th:action="@{/note/searchTitleAndContent}" method="get" class="form-inline mb-3">
+        <input type="text" class="form-control mr-2" name="query" placeholder="Search by title or content" required>
+        <button type="submit" class="btn btn-primary">Find</button>
+    </form>
+
+    <form th:action="@{/note/deleteByTitle}" method="post" class="form-inline mb-3">
+        <input type="text" class="form-control mr-2" name="query" placeholder="Delete by title" required>
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Title</th>
+            <th>Content</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="note : ${notes}">
+            <td th:text="${note.title}"></td>
+            <td th:text="${note.content}"></td>
+            <td>
+                <!-- Кнопка редактирования -->
+                <a th:href="@{'/note/edit/' + ${note.id}}" class="btn btn-warning btn-sm">Edit</a>
+                <!-- Кнопка удаления -->
+                <form th:action="@{'/note/delete/' + ${note.id}}" method="post" class="d-inline">
+                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div th:if="${param.error}" th:text="'Error: ' + ${param.error}" class="alert alert-danger" role="alert"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

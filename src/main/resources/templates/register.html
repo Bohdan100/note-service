@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #76b2fe, #b69efe);
+            height: 100vh;
+        }
+        .auth-container {
+            max-width: 400px;
+            margin: auto;
+            padding-top: 50px;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .btn-group .btn {
+            margin-right: 10px;
+            width: 150px;
+        }
+        .register-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+<div class="container auth-container">
+    <div class="btn-group">
+        <a href="/auth/login" class="btn btn-secondary">Sign in</a>
+        <a href="/auth/register" class="btn btn-primary">Registration</a>
+    </div>
+    <div class="register-box">
+        <h3 class="text-center">Registration</h3>
+
+        <form th:action="@{/auth/register}" method="post">
+            <div class="form-group">
+                <label for="name">Your name:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Your password:</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

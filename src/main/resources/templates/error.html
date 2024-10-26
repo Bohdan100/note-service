@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+        background: linear-gradient(to bottom, #76b2fe, #b69efe);
+        height: 100vh;
+    }
+    .error-container {
+        max-width: 500px;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .error-box {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .error-code {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #ff0000;
+    }
+    .error-message {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container error-container">
+  <div class="error-box">
+    <h3 class="text-center">An error occurred</h3>
+
+    <div class="text-center">
+      <p class="error-code" th:text="${status}">Error 500</p>
+      <p class="error-message" th:text="${errorMessage}">Error processing request.</p>
+    </div>
+
+    <div class="text-center">
+      <a href="/auth/login" class="btn btn-primary btn-block">Return to login page</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
