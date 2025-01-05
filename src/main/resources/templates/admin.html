@@ -27,7 +27,7 @@
             <td th:text="${user.email}"></td>
             <td th:text="${user.authority}"></td>
             <td>
-                <form th:action="@{/note/admin/delete/{id}(id=${user.id})}" method="post">
+                <form th:action="@{'/api/v1/note/admin/delete/' + ${user.id}}" method="post">
                     <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
             </td>
@@ -35,7 +35,7 @@
         </tbody>
     </table>
 
-    <a href="/note/list" class="btn btn-primary mt-3">Back to Note List</a>
+    <a th:href="@{/api/v1/note/list}" class="btn btn-primary mt-3">Back to Note List</a>
 </div>
 </body>
 </html>

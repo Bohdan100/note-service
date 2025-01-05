@@ -53,11 +53,11 @@ class UserServiceTest {
     @Test
     void testFindByEmail() {
         String email = "test@example.com";
-        when(userRepository.findByEmail(email)).thenReturn(user);
+        when(userRepository.findUserByEmail(email)).thenReturn(user);
 
-        User foundUser = userRepository.findByEmail(email);
+        User foundUser = userRepository.findUserByEmail(email);
         Assertions.assertNotNull(foundUser);
         Assertions.assertEquals(user, foundUser);
-        verify(userRepository).findByEmail(email);
+        verify(userRepository).findUserByEmail(email);
     }
 }

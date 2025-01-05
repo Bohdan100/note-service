@@ -21,26 +21,26 @@ public class AuthConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/auth/login", "/auth/register").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-                        .requestMatchers("/note/**").authenticated()
-                        .requestMatchers("/note/admin").hasAuthority("admin")
+                        .requestMatchers("/api/v1/auth/login", "/api/v1/auth/register").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
+                        .requestMatchers("/api/v1/note/**").authenticated()
+                        .requestMatchers("/api/v1/note/admin").hasAuthority("admin")
                         .anyRequest().permitAll()
                 )
-                .formLogin(login -> login
-                        .loginPage("/auth/login")
-                        .permitAll()
+                .httpBasic(httpBasic -> httpBasic.disable())
+                .formLogin(formLogin -> formLogin
+                        .loginPage("/api/v1/auth/login")
                         .usernameParameter("email")
                         .passwordParameter("password")
-                        .defaultSuccessUrl("/note/list", true)
-                        .failureUrl("/auth/login?error=true")
+                        .defaultSuccessUrl("/api/v1/note/list", true)
+                        .failureUrl("/api/v1/auth/login?error=invalid name or password")
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/auth/logout")
-                        .logoutSuccessUrl("/auth/login")
+                        .logoutUrl("/api/v1/auth/logout")
+                        .logoutSuccessUrl("/api/v1/auth/login")
                         .permitAll()
                 )
-                .csrf(csrf -> csrf.ignoringRequestMatchers("/auth/**"));
+                .csrf(csrf -> csrf.ignoringRequestMatchers("/api/v1/auth/**"));
 
         return http.build();
     }

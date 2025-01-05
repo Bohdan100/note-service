@@ -75,7 +75,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     private UserSecurityData getByIdOrNull(String email) {
-        String sql = "SELECT password, authority FROM \"user\" WHERE email = :email";
+        String sql = "SELECT password, authority FROM `user` WHERE email = :email";
         return jdbcTemplate.queryForObject(
                 sql,
                 Map.of("email", email),

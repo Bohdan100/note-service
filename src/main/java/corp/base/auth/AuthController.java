@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.dao.DataAccessException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -18,25 +17,27 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import static corp.base.constants.Constants.VERSION;
+import static corp.base.helpers.Redirect.buildRedirectUrl;
 import java.util.Map;
 
 @Slf4j
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/auth")
+@RequestMapping(VERSION + "auth")
 public class AuthController {
     private final PasswordEncoder passwordEncoder;
     private final NamedParameterJdbcTemplate jdbcTemplate;
     private final CustomAuthProvider authProvider;
 
-//  GET http://localhost:8080/auth/register
+//  GET http://localhost:8080/api/v1/auth/register
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
         return "register";
     }
 
-//  POST http://localhost:8080/auth/register
+//  POST http://localhost:8080/api/v1/auth/register
     @PostMapping("/register")
     public String registerUser(@ModelAttribute User user, RedirectAttributes redirectAttributes) {
         String originalPassword = user.getPassword();
@@ -45,7 +46,7 @@ public class AuthController {
         user.setAuthority("user");
 
         try {
-            String sql = "INSERT INTO \"user\" (name, email, password, authority) VALUES (:name, :email, :password, :authority)";
+            String sql = "INSERT INTO `user` (name, email, password, authority) VALUES (:name, :email, :password, :authority)";
             jdbcTemplate.update(sql, Map.of(
                     "name", user.getName(),
                     "email", user.getEmail(),
@@ -60,16 +61,19 @@ public class AuthController {
             securityContext.setAuthentication(authentication);
             SecurityContextHolder.setContext(securityContext);
 
-            return "redirect:/note/list";
-        } catch (DataAccessException e) {
-            redirectAttributes.addFlashAttribute("error", "User with this email already exists.");
-            return "redirect:/auth/register";
+            return buildRedirectUrl("auth/login");
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Invalid name, email or password");
+            return buildRedirectUrl("auth/register");
         }
     }
 
-//  GET http://localhost:8080/auth/login
+//  GET http://localhost:8080/api/v1/auth/login
     @GetMapping("/login")
-    public String showLoginForm() {
+    public String showLoginForm(@RequestParam(name = "error", required = false) String error, Model model) {
+        if (error != null) {
+            model.addAttribute("error", error);
+        }
         return "login";
     }
 
@@ -78,27 +82,25 @@ public class AuthController {
     public String loginUser(@RequestParam String email, @RequestParam String password,
                             RedirectAttributes redirectAttributes, Model model) {
 
-        String sql = "SELECT password FROM \"user\" WHERE email = :email";
+        String sql = "SELECT password FROM `user` WHERE email = :email";
         String storedPasswordHash;
 
         try {
             storedPasswordHash = jdbcTemplate.queryForObject(sql, Map.of("email", email), String.class);
-        } catch (EmptyResultDataAccessException e) {
-            model.addAttribute("status", 404);
-            model.addAttribute("errorMessage", "Invalid email or password.");
-            return "error";
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("error", "Invalid email or password.");
+            return buildRedirectUrl("auth/login");
         }
 
         if (!passwordEncoder.matches(password, storedPasswordHash)) {
-            model.addAttribute("status", 401);
-            model.addAttribute("errorMessage", "Invalid email or password.");
-            return "error";
+            redirectAttributes.addFlashAttribute("error", "Invalid email or password.");
+            return buildRedirectUrl("auth/login");
         }
 
-        return "redirect:/note/list";
+        return buildRedirectUrl("note/list");
     }
 
-//  http://localhost:8080/auth/logout
+//  http://localhost:8080/api/v1/auth/logout
     @GetMapping("/logout")
     public String logout(HttpServletRequest request) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -107,6 +109,6 @@ public class AuthController {
             request.getSession().invalidate();
             SecurityContextHolder.clearContext();
         }
-        return "redirect:/auth/login";
+        return buildRedirectUrl("auth/login");
     }
 }

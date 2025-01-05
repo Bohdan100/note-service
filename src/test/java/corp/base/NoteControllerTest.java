@@ -1,11 +1,14 @@
 package corp.base;
 
+import corp.base.user.UserService;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.mockito.MockitoAnnotations;
+
+import static corp.base.helpers.Redirect.buildRedirectUrl;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 import org.junit.jupiter.api.Assertions;
@@ -36,6 +39,9 @@ class NoteControllerTest {
     @Mock
     private Authentication authentication;
 
+    @Mock
+    private UserService userService;
+
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -61,21 +67,21 @@ class NoteControllerTest {
         String title = "Test Title";
         String content = "Test Content";
 
-        Assertions.assertEquals("redirect:/note/list", noteController.addNote(title, content));
+        Assertions.assertEquals(buildRedirectUrl("note/list"), noteController.addNote(title, content));
         verify(noteService).save(any(Note.class), eq("test@example.com"));
     }
 
     @Test
     void testDeleteNoteByIdController() {
         String id = "1";
-        Assertions.assertEquals("redirect:/note/list", noteController.deleteById(id));
+        Assertions.assertEquals(buildRedirectUrl("note/list"), noteController.deleteById(id));
         verify(noteService).deleteById(id, "test@example.com");
     }
 
     @Test
     void testEditPageControllerSuccess() {
         Note note = new Note();
-        note.setId(1);
+        note.setId(1L);
         note.setTitle("Test Note");
 
         when(noteService.getById(anyString())).thenReturn(note);
@@ -91,21 +97,21 @@ class NoteControllerTest {
         when(noteService.getById(anyString())).thenThrow(new NoSuchElementException("Note not found"));
 
         ModelAndView modelAndView = noteController.editPage("1");
-        Assertions.assertEquals("redirect:/note/list", modelAndView.getViewName());
+        Assertions.assertEquals(buildRedirectUrl("note/list"), modelAndView.getViewName());
         Assertions.assertEquals("Note not found", modelAndView.getModel().get("error"));
     }
 
     @Test
     void testEditNoteControllerSuccess() {
         Note note = new Note();
-        note.setId(1);
+        note.setId(1L);
         note.setTitle("Old Title");
         note.setContent("Old Content");
 
         when(noteService.getById(anyString())).thenReturn(note);
 
-        String result = noteController.editNote("1", "New Title", "New Content");
-        Assertions.assertEquals("redirect:/note/list", result);
+        String result = noteController.editNote("1L", "New Title", "New Content");
+        Assertions.assertEquals(buildRedirectUrl("note/list"), result);
         verify(noteService).save(any(Note.class), eq("test@example.com"));
         Assertions.assertEquals("New Title", note.getTitle());
         Assertions.assertEquals("New Content", note.getContent());
@@ -114,12 +120,12 @@ class NoteControllerTest {
     @Test
     void testEditNoteControllerValidation() {
         Note note = new Note();
-        note.setId(1);
+        note.setId(1L);
 
         when(noteService.getById(anyString())).thenReturn(note);
 
         String result = noteController.editNote("1", "N", "New Content");
-        Assertions.assertEquals("redirect:/note/list?error=Title must contain at least 2 characters", result);
+        Assertions.assertEquals(buildRedirectUrl("note/list?error=Title must contain at least 2 characters"), result);
         verify(noteService, never()).save(any(Note.class), anyString());
     }
 
@@ -140,7 +146,7 @@ class NoteControllerTest {
     @Test
     void testDeleteNotesByTitleController() {
         String result = noteController.deleteNotesByTitle("test");
-        Assertions.assertEquals("redirect:/note/list", result);
+        Assertions.assertEquals(buildRedirectUrl("note/list"), result);
         verify(noteService).deleteNotesByTitle(eq("test"), eq("test@example.com"));
     }
 }

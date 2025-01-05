@@ -1,0 +1,1779 @@
+2025-01-05T14:57:37.736+02:00  INFO 11676 --- [note-service] [main] corp.base.NoteServiceApplication         : Starting NoteServiceApplication using Java 21.0.4 with PID 11676 (C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\classes\java\main started by Dell in C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service)
+2025-01-05T14:57:37.752+02:00  INFO 11676 --- [note-service] [main] corp.base.NoteServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:57:38.412+02:00  INFO 11676 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-05T14:57:38.459+02:00  INFO 11676 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2025-01-05T14:57:39.092+02:00  INFO 11676 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-05T14:57:39.108+02:00  INFO 11676 --- [note-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-05T14:57:39.108+02:00  INFO 11676 --- [note-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-05T14:57:39.171+02:00  INFO 11676 --- [note-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-05T14:57:39.171+02:00  INFO 11676 --- [note-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1368 ms
+2025-01-05T14:57:39.424+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2025-01-05T14:57:39.424+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
+2025-01-05T14:57:39.424+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2025-01-05T14:57:39.424+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2025-01-05T14:57:39.424+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
+2025-01-05T14:57:39.424+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/Dell/Desktop/Java-projects/github-bohdan100-repo/note-service/build/resources/main/db/migration
+2025-01-05T14:57:39.426+02:00 DEBUG 11676 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\
+2025-01-05T14:57:39.426+02:00 DEBUG 11676 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\db\migration (db/migration)
+2025-01-05T14:57:39.426+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__create_user_note_tables.sql
+2025-01-05T14:57:39.426+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__insert_notes.sql
+2025-01-05T14:57:39.426+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2025-01-05T14:57:39.426+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__create_user_note_tables.sql
+2025-01-05T14:57:39.432+02:00  INFO 11676 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-05T14:57:39.716+02:00  INFO 11676 --- [note-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@482f7af0
+2025-01-05T14:57:39.732+02:00  INFO 11676 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-05T14:57:39.766+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__insert_notes.sql
+2025-01-05T14:57:39.780+02:00  INFO 11676 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/note (MySQL 8.0)
+2025-01-05T14:57:39.780+02:00 DEBUG 11676 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
+2025-01-05T14:57:39.780+02:00 DEBUG 11676 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2025-01-05T14:57:39.780+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2025-01-05T14:57:39.780+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2025-01-05T14:57:39.811+02:00 DEBUG 11676 --- [note-service] [main] o.f.database.mysql.MySQLConnection       : Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
+2025-01-05T14:57:39.811+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2025-01-05T14:57:39.811+02:00 DEBUG 11676 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2025-01-05T14:57:39.830+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2025-01-05T14:57:39.831+02:00 DEBUG 11676 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
+2025-01-05T14:57:39.831+02:00 DEBUG 11676 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
+2025-01-05T14:57:39.831+02:00 DEBUG 11676 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
+2025-01-05T14:57:39.831+02:00 DEBUG 11676 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
+2025-01-05T14:57:39.863+02:00  INFO 11676 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.037s)
+2025-01-05T14:57:39.863+02:00 DEBUG 11676 --- [note-service] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `note`
+2025-01-05T14:57:39.863+02:00 DEBUG 11676 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2025-01-05T14:57:39.877+02:00  INFO 11676 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `note`: 2
+2025-01-05T14:57:39.877+02:00  INFO 11676 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Schema `note` is up to date. No migration necessary.
+2025-01-05T14:57:39.877+02:00 DEBUG 11676 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 28 of 72M
+2025-01-05T14:57:39.977+02:00  INFO 11676 --- [note-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-05T14:57:40.056+02:00  INFO 11676 --- [note-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-01-05T14:57:40.104+02:00  INFO 11676 --- [note-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-05T14:57:40.454+02:00  INFO 11676 --- [note-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-05T14:57:40.502+02:00  WARN 11676 --- [note-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-05T14:57:41.244+02:00  INFO 11676 --- [note-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-05T14:57:41.244+02:00  INFO 11676 --- [note-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-05T14:57:41.548+02:00  INFO 11676 --- [note-service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-05T14:57:42.191+02:00  WARN 11676 --- [note-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-05T14:57:42.219+02:00  WARN 11676 --- [note-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-01-05T14:57:42.847+02:00  INFO 11676 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-05T14:57:42.854+02:00  INFO 11676 --- [note-service] [main] corp.base.NoteServiceApplication         : Started NoteServiceApplication in 5.553 seconds (process running for 5.891)
+2025-01-05T14:57:58.194+02:00  INFO 11676 --- [note-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-05T14:57:58.194+02:00  INFO 11676 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-05T14:57:58.195+02:00  INFO 11676 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-01-05T14:58:09.197+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:58:09.258+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:09.275+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:09.296+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:15.252+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T14:58:15.276+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    insert 
+    into
+        note
+        (content, title, user_id) 
+    values
+        (?, ?, ?)
+2025-01-05T14:58:15.309+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:58:15.309+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:15.319+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:15.323+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:17.592+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T14:58:21.255+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T14:58:21.261+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    update
+        note 
+    set
+        content=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2025-01-05T14:58:21.270+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T14:58:21.288+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:58:21.296+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:21.296+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:21.301+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:29.907+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T14:58:29.910+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    insert 
+    into
+        note
+        (content, title, user_id) 
+    values
+        (?, ?, ?)
+2025-01-05T14:58:29.932+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:58:29.932+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:29.938+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:29.941+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:32.188+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T14:58:37.518+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T14:58:37.524+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        note 
+    set
+        content=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2025-01-05T14:58:37.524+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T14:58:37.543+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:58:37.549+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:37.551+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:37.551+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:41.411+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T14:58:41.411+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:41.419+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T14:58:56.596+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:58:56.600+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:58:56.600+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:58:56.600+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:59:01.700+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:59:01.705+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:59:01.706+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:59:01.709+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:59:12.788+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T14:59:12.791+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:59:12.795+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T14:59:34.607+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and n1_0.user_id=(
+            select
+                u2_0.id 
+            from
+                `user` u2_0 
+            where
+                u2_0.email=?
+        )
+2025-01-05T14:59:34.607+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:59:34.623+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and u1_0.email=?
+2025-01-05T14:59:42.279+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    delete n1_0 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T14:59:42.295+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T14:59:42.295+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T14:59:42.302+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T14:59:42.303+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:01:57.764+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T15:01:57.764+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    insert 
+    into
+        note
+        (content, title, user_id) 
+    values
+        (?, ?, ?)
+2025-01-05T15:01:57.792+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:01:57.794+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:01:57.796+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:01:57.799+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:02:14.968+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T15:02:20.401+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T15:02:20.407+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    update
+        note 
+    set
+        content=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2025-01-05T15:02:20.408+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T15:02:20.427+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:02:20.434+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:02:20.434+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:02:20.434+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:02:25.326+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and n1_0.user_id=(
+            select
+                u2_0.id 
+            from
+                `user` u2_0 
+            where
+                u2_0.email=?
+        )
+2025-01-05T15:02:25.329+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:02:25.333+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and u1_0.email=?
+2025-01-05T15:09:28.268+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:09:28.268+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:09:28.268+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:09:28.283+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:09:32.667+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:09:32.672+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:09:32.672+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:09:32.677+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:10:48.325+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:10:48.325+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:10:48.325+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:10:48.333+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:10:53.548+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and n1_0.user_id=(
+            select
+                u2_0.id 
+            from
+                `user` u2_0 
+            where
+                u2_0.email=?
+        )
+2025-01-05T15:10:53.549+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:10:53.554+02:00 DEBUG 11676 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and u1_0.email=?
+2025-01-05T15:11:05.629+02:00  INFO 3128 --- [note-service] [main] corp.base.NoteServiceApplication         : Starting NoteServiceApplication using Java 21.0.4 with PID 3128 (C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\classes\java\main started by Dell in C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service)
+2025-01-05T15:11:05.629+02:00  INFO 3128 --- [note-service] [main] corp.base.NoteServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-05T15:11:06.246+02:00  INFO 3128 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-05T15:11:06.307+02:00  INFO 3128 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 2 JPA repository interfaces.
+2025-01-05T15:11:06.860+02:00  INFO 3128 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-05T15:11:06.876+02:00  INFO 3128 --- [note-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-05T15:11:06.876+02:00  INFO 3128 --- [note-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-05T15:11:06.940+02:00  INFO 3128 --- [note-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-05T15:11:06.940+02:00  INFO 3128 --- [note-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1254 ms
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/Dell/Desktop/Java-projects/github-bohdan100-repo/note-service/build/resources/main/db/migration
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\db\migration (db/migration)
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__create_user_note_tables.sql
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__insert_notes.sql
+2025-01-05T15:11:07.161+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2025-01-05T15:11:07.177+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__create_user_note_tables.sql
+2025-01-05T15:11:07.179+02:00  INFO 3128 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-05T15:11:07.462+02:00  INFO 3128 --- [note-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e3899fd
+2025-01-05T15:11:07.462+02:00  INFO 3128 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-05T15:11:07.498+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__insert_notes.sql
+2025-01-05T15:11:07.510+02:00  INFO 3128 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/note (MySQL 8.0)
+2025-01-05T15:11:07.510+02:00 DEBUG 3128 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
+2025-01-05T15:11:07.510+02:00 DEBUG 3128 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2025-01-05T15:11:07.510+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2025-01-05T15:11:07.510+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2025-01-05T15:11:07.542+02:00 DEBUG 3128 --- [note-service] [main] o.f.database.mysql.MySQLConnection       : Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
+2025-01-05T15:11:07.542+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2025-01-05T15:11:07.558+02:00 DEBUG 3128 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2025-01-05T15:11:07.558+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2025-01-05T15:11:07.558+02:00 DEBUG 3128 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
+2025-01-05T15:11:07.558+02:00 DEBUG 3128 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
+2025-01-05T15:11:07.558+02:00 DEBUG 3128 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
+2025-01-05T15:11:07.558+02:00 DEBUG 3128 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
+2025-01-05T15:11:07.590+02:00  INFO 3128 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.026s)
+2025-01-05T15:11:07.590+02:00 DEBUG 3128 --- [note-service] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `note`
+2025-01-05T15:11:07.590+02:00 DEBUG 3128 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2025-01-05T15:11:07.606+02:00  INFO 3128 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `note`: 2
+2025-01-05T15:11:07.606+02:00  INFO 3128 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Schema `note` is up to date. No migration necessary.
+2025-01-05T15:11:07.606+02:00 DEBUG 3128 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 29 of 60M
+2025-01-05T15:11:07.695+02:00  INFO 3128 --- [note-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-05T15:11:07.750+02:00  INFO 3128 --- [note-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-01-05T15:11:07.798+02:00  INFO 3128 --- [note-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-05T15:11:08.119+02:00  INFO 3128 --- [note-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-05T15:11:08.174+02:00  WARN 3128 --- [note-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-05T15:11:08.848+02:00  INFO 3128 --- [note-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-05T15:11:08.848+02:00  INFO 3128 --- [note-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-05T15:11:09.150+02:00  INFO 3128 --- [note-service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-05T15:11:09.703+02:00  WARN 3128 --- [note-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-05T15:11:09.721+02:00  WARN 3128 --- [note-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-01-05T15:11:10.226+02:00  INFO 3128 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-05T15:11:10.240+02:00  INFO 3128 --- [note-service] [main] corp.base.NoteServiceApplication         : Started NoteServiceApplication in 4.98 seconds (process running for 5.289)
+2025-01-05T15:11:23.292+02:00  INFO 3128 --- [note-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-05T15:11:23.292+02:00  INFO 3128 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-05T15:11:23.292+02:00  INFO 3128 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-01-05T15:11:23.504+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:23.582+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:23.591+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:23.592+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:28.515+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:28.523+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and n1_0.user_id=(
+            select
+                u2_0.id 
+            from
+                `user` u2_0 
+            where
+                u2_0.email=?
+        )
+2025-01-05T15:11:28.523+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:28.532+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and u1_0.email=?
+2025-01-05T15:11:32.026+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:32.032+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T15:11:32.032+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T15:11:34.288+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:34.290+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T15:11:34.295+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:34.295+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-05T15:11:38.833+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:38.835+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and n1_0.user_id=(
+            select
+                u2_0.id 
+            from
+                `user` u2_0 
+            where
+                u2_0.email=?
+        )
+2025-01-05T15:11:38.841+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:38.841+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        (
+            lower(n1_0.title) like lower(?) escape '' 
+            or lower(n1_0.content) like lower(?) escape ''
+        ) 
+        and u1_0.email=?
+2025-01-05T15:11:39.979+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:39.983+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:39.983+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:39.991+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:41.573+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T15:11:44.356+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id,
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        n1_0.id=?
+2025-01-05T15:11:44.387+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    update
+        note 
+    set
+        content=?,
+        title=?,
+        user_id=? 
+    where
+        id=?
+2025-01-05T15:11:44.394+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    SELECT
+        * 
+    FROM
+        `user` 
+    WHERE
+        email = ?
+2025-01-05T15:11:44.420+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:44.420+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:44.429+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:44.429+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:49.411+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:11:49.416+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:11:49.418+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:11:49.423+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:12:13.663+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:12:13.663+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:12:13.670+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:12:13.671+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:12:20.108+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:12:20.108+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:12:20.116+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:12:20.117+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:13:04.370+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:13:04.370+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:13:04.370+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:13:27.673+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0
+2025-01-05T15:13:42.009+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:13:42.014+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:13:42.017+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:13:47.070+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0
+2025-01-05T15:13:52.484+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-05T15:13:52.490+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    select
+        n1_0.user_id,
+        n1_0.id,
+        n1_0.content,
+        n1_0.title 
+    from
+        note n1_0 
+    where
+        n1_0.user_id=?
+2025-01-05T15:13:52.490+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+    delete 
+    from
+        `user` 
+    where
+        id=?
+2025-01-05T15:13:52.512+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0
+2025-01-05T15:13:55.735+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0
+2025-01-05T15:14:07.309+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:14:07.313+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:14:07.314+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:14:11.512+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0
+2025-01-05T15:14:26.915+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:14:26.919+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:14:26.922+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:14:34.816+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0
+2025-01-05T15:14:40.564+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    SELECT
+        name 
+    FROM
+        user 
+    WHERE
+        email = ?
+2025-01-05T15:14:40.566+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        n1_0.id,
+        n1_0.content,
+        n1_0.title,
+        n1_0.user_id 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?
+2025-01-05T15:14:40.570+02:00 DEBUG 3128 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+    select
+        count(n1_0.id) 
+    from
+        note n1_0 
+    join
+        `user` u1_0 
+            on u1_0.id=n1_0.user_id 
+    where
+        u1_0.email=?

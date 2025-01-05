@@ -65,13 +65,19 @@
         .form-check-label {
             color: #4c4c4c;
         }
+        .hello-text {
+        font-size: 1.7rem;
+        font-weight: 500;
+        color: #ffc107;
+    }
     </style>
 </head>
 <body>
 
 <div class="container-fluid">
-    <div class="row justify-content-end mt-3 mr-3">
-        <a href="/auth/logout" class="btn btn-outline-dark">Logout</a>
+    <div class="row justify-content-end align-items-center mt-3 mr-3">
+        <span class="mr-3 align-self-center hello-text" th:text="'Hello, ' + ${userName}"></span>
+        <a th:href="@{/api/v1/auth/logout}" class="btn btn-outline-dark">Logout</a>
     </div>
 </div>
 
@@ -79,22 +85,22 @@
     <h1 class="mb-4 text-center">List of Notes</h1>
 
     <div class="d-flex flex-row mb-3 alert alert-info justify-content-between">
-        <a href="/note/add" class="btn btn-success">Add New Note</a>
-        <a href="/note/list" class="btn btn-primary">See full list of notes</a>
+        <a th:href="@{/api/v1/note/add}" class="btn btn-success">Add New Note</a>
+        <a th:href="@{/api/v1/note/list}" class="btn btn-primary">See full list of notes</a>
         <div class="p-2">Total Notes: <span th:text="${totalNotes}"></span></div>
     </div>
 
-    <form th:action="@{/note/searchTitle}" method="get" class="form-inline mb-3">
+    <form th:action="@{/api/v1/note/searchTitle}" method="get" class="form-inline mb-3">
         <input type="text" class="form-control mr-2" name="query" placeholder="Search by title" required>
         <button type="submit" class="btn btn-primary">Find</button>
     </form>
 
-    <form th:action="@{/note/searchTitleAndContent}" method="get" class="form-inline mb-3">
+    <form th:action="@{/api/v1/note/searchTitleAndContent}" method="get" class="form-inline mb-3">
         <input type="text" class="form-control mr-2" name="query" placeholder="Search by title or content" required>
         <button type="submit" class="btn btn-primary">Find</button>
     </form>
 
-    <form th:action="@{/note/deleteByTitle}" method="post" class="form-inline mb-3">
+    <form th:action="@{/api/v1/note/deleteByTitle}" method="post" class="form-inline mb-3">
         <input type="text" class="form-control mr-2" name="query" placeholder="Delete by title" required>
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
@@ -112,10 +118,10 @@
             <td th:text="${note.title}"></td>
             <td th:text="${note.content}"></td>
             <td>
-                <!-- Кнопка редактирования -->
-                <a th:href="@{'/note/edit/' + ${note.id}}" class="btn btn-warning btn-sm">Edit</a>
-                <!-- Кнопка удаления -->
-                <form th:action="@{'/note/delete/' + ${note.id}}" method="post" class="d-inline">
+                <!-- Edit button -->
+                <a th:href="@{/api/v1/note/edit/{id}(id=${note.id})}" class="btn btn-warning btn-sm">Edit</a>
+                <!-- Delete button -->
+                <form th:action="@{/api/v1/note/delete/{id}(id=${note.id})}" method="post" class="d-inline">
                     <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                 </form>
             </td>

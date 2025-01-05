@@ -7,6 +7,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class AuthMVCConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/auth/login").setViewName("login");
+        registry.addViewController("/api/v1/auth/login").setViewName("login");
     }
 }

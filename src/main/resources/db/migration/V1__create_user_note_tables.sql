@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS "user" (
+CREATE TABLE IF NOT EXISTS `user` (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
@@ -7,9 +7,11 @@ CREATE TABLE IF NOT EXISTS "user" (
 );
 
 CREATE TABLE IF NOT EXISTS note (
-      id IDENTITY PRIMARY KEY,
-      title VARCHAR(100) NOT NULL CHECK (LENGTH(title) >= 2 AND LENGTH(title) <= 100),
-      content VARCHAR(1000) NOT NULL CHECK (LENGTH(content) <= 1000),
-      user_id BIGINT NOT NULL,
-      CONSTRAINT fk_note_user FOREIGN KEY (user_id) REFERENCES "user"(id)
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    content VARCHAR(1000) NOT NULL,
+    user_id BIGINT NOT NULL,
+    CONSTRAINT chk_title_length CHECK (CHAR_LENGTH(title) BETWEEN 2 AND 100),
+    CONSTRAINT chk_content_length CHECK (CHAR_LENGTH(content) <= 1000),
+    CONSTRAINT fk_note_user FOREIGN KEY (user_id) REFERENCES `user` (id)
 );

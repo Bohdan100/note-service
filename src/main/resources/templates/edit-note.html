@@ -42,24 +42,24 @@
 <div class="container form-container">
     <h1 class="mb-4 text-center">Edit Note</h1>
 
-    <form th:action="@{/note/edit}" method="post">
+    <form th:action="@{/api/v1/note/edit}" method="post">
         <div class="form-group">
             <label for="note-id">ID</label>
             <input type="text" id="note-id" class="form-control" th:value="${note.id}" readonly>
         </div>
         <div class="form-group">
             <label for="note-title">Title</label>
-            <input type="text" id="note-title" name="title" class="form-control" th:value="${note.title}">
+            <input type="text" id="note-title" name="title" class="form-control" th:value="${#strings.trim(note.title)}">
         </div>
         <div class="form-group">
             <label for="note-content">Content</label>
             <textarea id="note-content" name="content" class="form-control" rows="5"
-                      th:text="${note.content}"></textarea>
+                      th:text="${#strings.trim(note.content)}"></textarea>
         </div>
         <input type="hidden" name="id" th:value="${note.id}">
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Change note</button>
-            <a href="/note/list" class="btn btn-secondary">Back to List</a>
+            <a th:href="@{/api/v1/note/list}" class="btn btn-secondary">Back to List</a>
         </div>
     </form>
 </div>

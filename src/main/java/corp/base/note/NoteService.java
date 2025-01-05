@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 
 import corp.base.auth.User;
-import corp.base.user.UserRepository;
+import corp.base.user.UserService;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,7 +15,7 @@ import java.util.NoSuchElementException;
 @RequiredArgsConstructor
 public class NoteService {
     private final NoteRepository noteRepository;
-    private final UserRepository userRepository;
+    private final UserService userService;
 
     public Note getById(String id) {
         return noteRepository.findById(Long.valueOf(id))
@@ -39,7 +39,6 @@ public class NoteService {
         return noteRepository.getCountNotesByTitle("%" + query + "%", userEmail);
     }
 
-
     public List<Note> searchNotesByTitleAndContent(String query, String userEmail) {
         return noteRepository.searchNotesByTitleAndContent("%" + query + "%", userEmail);
     }
@@ -50,7 +49,7 @@ public class NoteService {
 
     @Transactional
     public void save(Note note, String userEmail) {
-        User user = userRepository.findByEmail(userEmail);
+        User user = userService.findUserByEmail(userEmail);
         note.setUser(user);
         noteRepository.save(note);
     }

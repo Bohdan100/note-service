@@ -24,8 +24,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
 
+    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 
@@ -33,15 +34,13 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.flywaydb:flyway-core'
 
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    testImplementation 'org.springframework.security:spring-security-test'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
-
+    implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'org.flywaydb:flyway-mysql'
+    implementation 'com.h2database:h2'
 
     implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.springframework.boot:spring-boot-starter-logging'
-    implementation 'com.h2database:h2'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
@@ -51,11 +50,12 @@ dependencies {
 
 tasks.named('test') { useJUnitPlatform() }
 
-bootJar { archiveFileName = "${archiveBaseName.get()}.jar" }
+bootJar {
+    archiveFileName = "${archiveBaseName.get()}.jar"
+    destinationDirectory = file("$rootDir")
+}
 
-bootJar { destinationDirectory = file("$rootDir") }
-
-tasks.register('runAllTestsLauncher', JavaExec) {
+tasks.register('runAllTests', JavaExec) {
     classpath = sourceSets.test.runtimeClasspath
     mainClass.set('corp.base.AllTestsLauncher')
 }

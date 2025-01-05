@@ -16,6 +16,14 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public User findUserByEmail(String email) {
+        return userRepository.findUserByEmail(email);
+    }
+
+    public String getUserNameByEmail(String email) {
+        return userRepository.findNameByEmail(email);
+    }
+
     @Transactional
     public void deleteUserById(Long id) {
         userRepository.deleteById(id);

@@ -1,5 +1,6 @@
 package corp.base;
 
+import corp.base.user.UserService;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,12 +33,15 @@ class NoteServiceTest {
     private UserRepository userRepository;
 
     @Mock
+    private UserService userService;
+
+    @Mock
     private User user;
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        when(userRepository.findByEmail(any())).thenReturn(user);
+        when(userRepository.findUserByEmail(any())).thenReturn(user);
         when(user.getEmail()).thenReturn("test@example.com");
         setUpNotes();
     }
@@ -53,7 +57,7 @@ class NoteServiceTest {
 
     private Note createNote(Long id, String title, String content) {
         Note note = new Note();
-        note.setId(Math.toIntExact(id));
+        note.setId((long) Math.toIntExact(id));
         note.setTitle(title);
         note.setContent(content);
         note.setUser(user);
@@ -81,14 +85,18 @@ class NoteServiceTest {
 
     @Test
     void testSaveNote() {
-        when(userRepository.findByEmail(any())).thenReturn(user);
+        User user = new User();
+        user.setEmail("test@example.com");
+
+        when(userService.findUserByEmail(any())).thenReturn(user);
+
         Note note = new Note();
         note.setTitle("Test Title");
         note.setContent("Test Content");
 
         noteService.save(note, "test@example.com");
 
-        verify(userRepository).findByEmail("test@example.com");
+        verify(userService).findUserByEmail("test@example.com");
         verify(noteRepository).save(note);
     }
 
