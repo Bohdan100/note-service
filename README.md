@@ -1,5 +1,5 @@
 # Note-service Application
-The **Note-service Application** is a demonstration project designed to manage personal notes. Each user has their own notebook(s) and can add, update, view, and delete their notes. Notes can be searched by title or content, and deleted based on keywords in the title. Each note consists of a title and content. Users access the application using their email and password, and can register with their name, email, and password.
+The **Note-service** is a Spring Boot application that offers a secure** and  intuitive digital notepad for managing personal notes. Each user has their own dedicated notebook(s), where they can easily add, update, view, and delete their notes. Notes can be searched by title or content, and deleted based on keywords in the title. Each note consists of a title and content. Users access the application using their email and password, and can register with their name, email, and password.
 
 ## Features
 - Authentication and registration via email and password.
@@ -85,15 +85,14 @@ Before running the application, follow these steps to set up the database:
    java -jar note-service.jar
     ```
 4. Access the Application in Your Browser:
-- **Register**: [http://localhost:8080/api/v1/auth/register](http://localhost:8080/api/v1/auth/register)
-- **Login**: [http://localhost:8080/api/v1/auth/login](http://localhost:8080/api/v1/auth/login)
+   - **Register**: [http://localhost:8080/api/v1/auth/register](http://localhost:8080/api/v1/auth/register)
+   - **Login**: [http://localhost:8080/api/v1/auth/login](http://localhost:8080/api/v1/auth/login)
 
-- **Notes**:
-    - Get list: [http://localhost:8080/api/v1/note/list](http://localhost:8080/api/v1/note/list)
-    - Add: [http://localhost:8080/api/v1/note/add](http://localhost:8080/api/v1/note/add)
-    - Update: [http://localhost:8080/api/v1/note/edit/{id}](http://localhost:8080/api/v1/note/edit/{id})
-    - Search: [http://localhost:8080/api/v1/note/searchTitleAndContent?query={text}](http://localhost:8080/api/v1/note/searchTitleAndContent?query={text})
-
+   - **Notes**:
+       - Get list: [http://localhost:8080/api/v1/note/list](http://localhost:8080/api/v1/note/list)
+       - Add: [http://localhost:8080/api/v1/note/add](http://localhost:8080/api/v1/note/add)
+       - Update: [http://localhost:8080/api/v1/note/edit/{id}](http://localhost:8080/api/v1/note/edit/{id})
+       - Search: [http://localhost:8080/api/v1/note/searchTitleAndContent?query={text}](http://localhost:8080/api/v1/note/searchTitleAndContent?query={text})
 5. Testing the application:
    ```bash
    .\gradlew runAllTests     (for Windows)
@@ -104,19 +103,19 @@ Before running the application, follow these steps to set up the database:
    ```
    
 6. Testing the Application on GitHub:
-- create a `.github/workflows` directory in your project
-- add a file named `gradle-test.yml` to define your workflow.
-- set up an action to trigger on commit/push by configuring the file as follows:
-  ```yaml
-    on:
-      push:
-        branches: [ "master" ]
-      pull_request:
-        branches: [ "master" ]
-    ```
-- define a testing task in the workflow file, for example:
-    ```yaml
-    name: Run all tests
-    run: ./gradlew runAllTests
-    ```
-- after each commit, check the test results in the **Actions** section of your GitHub repository.
+   - create a `.github/workflows` directory in your project
+   - add a file named `gradle-test.yml` to define your workflow.
+   - set up an action to trigger on commit/push by configuring the file as follows:
+     ```yaml
+       on:
+         push:
+           branches: [ "master" ]
+         pull_request:
+           branches: [ "master" ]
+       ```
+   - define a testing task in the workflow file, for example:
+       ```yaml
+       name: Run all tests
+       run: ./gradlew runAllTests
+       ```
+   - after each commit, check the test results in the **Actions** section of your GitHub repository.
