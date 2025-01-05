@@ -72,32 +72,51 @@ Before running the application, follow these steps to set up the database:
    git clone https://github.com/Bohdan100/note-service
    cd note-service
 
-2. Build and run the application in terminal using Gradle:
+2. Build and Run the Application Using Gradle in Terminal:
    ```bash
-   .\gradlew bootRun     (Windows)
-   ./gradlew bootRun     (Linux)
-
-3. Build and run the application in terminal using JAR file:
+   .\gradlew bootRun     (for Windows)
+   ./gradlew bootRun     (for Linux)
+    ```
+3. Build and Run the Application Using a JAR File:
    ```bash
-   .\gradlew bootJar     (Windows)
-   ./gradlew bootJar     (Linux)
+   .\gradlew bootJar     (for Windows)
+   ./gradlew bootJar     (for Linux)
    
    java -jar note-service.jar
-   
-4. Work in the application in your browser:
-Register: http://localhost:8080/api/v1/auth/register
-Login: http://localhost:8080/api/v1/auth/login
-Notes:
-    Get list: http://localhost:8080/api/v1/note/list
-    Add: http://localhost:8080/api/v1/note/add
-    Update: http://localhost:8080/api/v1/note/edit/{id}
-    Search: http://localhost:8080/api/v1/note/searchTitleAndContent?query={text}
+    ```
+4. Access the Application in Your Browser:
+- **Register**: [http://localhost:8080/api/v1/auth/register](http://localhost:8080/api/v1/auth/register)
+- **Login**: [http://localhost:8080/api/v1/auth/login](http://localhost:8080/api/v1/auth/login)
 
-5. Test application
+- **Notes**:
+    - Get list: [http://localhost:8080/api/v1/note/list](http://localhost:8080/api/v1/note/list)
+    - Add: [http://localhost:8080/api/v1/note/add](http://localhost:8080/api/v1/note/add)
+    - Update: [http://localhost:8080/api/v1/note/edit/{id}](http://localhost:8080/api/v1/note/edit/{id})
+    - Search: [http://localhost:8080/api/v1/note/searchTitleAndContent?query={text}](http://localhost:8080/api/v1/note/searchTitleAndContent?query={text})
+
+5. Testing the application:
    ```bash
-   .\gradlew runAllTests     (Windows)
-   ./gradlew runAllTests     (Linux)
+   .\gradlew runAllTests     (for Windows)
+   ./gradlew runAllTests     (for Linux)
+
+   .\gradlew test            (for Windows)
+   ./gradlew test            (for Linux)
+   ```
    
-   
-   .\gradlew test            (Windows)
-   ./gradlew test            (Linux)
+6. Testing the Application on GitHub:
+- create a `.github/workflows` directory in your project
+- add a file named `gradle-test.yml` to define your workflow.
+- set up an action to trigger on commit/push by configuring the file as follows:
+  ```yaml
+    on:
+      push:
+        branches: [ "master" ]
+      pull_request:
+        branches: [ "master" ]
+    ```
+- define a testing task in the workflow file, for example:
+    ```yaml
+    name: Run all tests
+    run: ./gradlew runAllTests
+    ```
+- after each commit, check the test results in the **Actions** section of your GitHub repository.
