@@ -1,5 +1,5 @@
 # Note-service Application
-The **Note-service** is a Spring Boot application that offers a secure** and  intuitive digital notepad for managing personal notes. Each user has their own dedicated notebook(s), where they can easily add, update, view, and delete their notes. Notes can be searched by title or content, and deleted based on keywords in the title. Each note consists of a title and content. Users access the application using their email and password, and can register with their name, email, and password.
+The **Note-service** is a Spring Boot application that offers a secure and  intuitive digital notepad for managing personal notes. Each user has their own dedicated notebook(s), where they can easily add, update, view, and delete their notes. Notes can be searched by title or content, and deleted based on keywords in the title. Each note consists of a title and content. Users access the application using their email and password, and can register with their name, email, and password.
 
 ## Features
 - Authentication and registration via email and password.
