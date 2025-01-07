@@ -1,17 +1,17 @@
 package corp.base.auth;
 
-import lombok.*;
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
+import lombok.Data;
+import lombok.ToString;
+import lombok.RequiredArgsConstructor;
 import java.util.List;
 import corp.base.note.Note;
 
 @Table(name = "\"user\"")
 @Entity
-@RequiredArgsConstructor
 @Data
-@Getter
-@Setter
+@RequiredArgsConstructor
 @ToString(exclude = "notes")
 public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,6 +1,5 @@
 package corp.base;
 
-import corp.base.user.UserService;
 import org.mockito.Mock;
 import org.mockito.InjectMocks;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,11 +15,16 @@ import org.junit.jupiter.api.Assertions;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.ui.ConcurrentModel;
 
-import corp.base.note.Note;
 import corp.base.note.NoteController;
 import corp.base.note.NoteService;
+import corp.base.user.UserService;
+import corp.base.note.Note;
+import corp.base.note.NoteDTO;
 
 import java.util.Collections;
 import java.util.List;
@@ -41,6 +45,9 @@ class NoteControllerTest {
 
     @Mock
     private UserService userService;
+
+    @Mock
+    private BindingResult bindingResult;
 
     @BeforeEach
     void setUp() {
@@ -63,12 +70,28 @@ class NoteControllerTest {
     }
 
     @Test
-    void testAddNoteController() {
-        String title = "Test Title";
-        String content = "Test Content";
+    void testAddNoteControllerValidInput() {
+        NoteDTO noteDTO = new NoteDTO("Valid Title", "Valid Content");
 
-        Assertions.assertEquals(buildRedirectUrl("note/list"), noteController.addNote(title, content));
+        when(bindingResult.hasErrors()).thenReturn(false);
+
+        String result = noteController.addNote(noteDTO, bindingResult);
+
+        Assertions.assertEquals(buildRedirectUrl("note/list"), result);
         verify(noteService).save(any(Note.class), eq("test@example.com"));
+    }
+
+    @Test
+    void testAddNoteControllerValidationError() {
+        NoteDTO noteDTO = new NoteDTO("", "Content");
+        when(bindingResult.hasErrors()).thenReturn(true);
+        when(bindingResult.getFieldErrors())
+                .thenReturn(List.of(new org.springframework.validation.FieldError("noteDTO", "title", "Title must not be empty")));
+
+        String result = noteController.addNote(noteDTO, bindingResult);
+
+        Assertions.assertEquals(buildRedirectUrl("note/list?error=Title must not be empty"), result);
+        verify(noteService, never()).save(any(Note.class), anyString());
     }
 
     @Test
@@ -102,30 +125,56 @@ class NoteControllerTest {
     }
 
     @Test
-    void testEditNoteControllerSuccess() {
+    void testEditNoteControllerValidInput() {
         Note note = new Note();
         note.setId(1L);
         note.setTitle("Old Title");
         note.setContent("Old Content");
 
-        when(noteService.getById(anyString())).thenReturn(note);
+        when(noteService.getById("1")).thenReturn(note);
 
-        String result = noteController.editNote("1L", "New Title", "New Content");
+        Model model = new ConcurrentModel();
+        String result = noteController.editNote("1", "New Title", "New Content", model);
+
         Assertions.assertEquals(buildRedirectUrl("note/list"), result);
-        verify(noteService).save(any(Note.class), eq("test@example.com"));
+        verify(noteService).save(note, "test@example.com");
         Assertions.assertEquals("New Title", note.getTitle());
         Assertions.assertEquals("New Content", note.getContent());
     }
 
     @Test
-    void testEditNoteControllerValidation() {
+    void testEditNoteControllerValidationError() {
         Note note = new Note();
         note.setId(1L);
 
-        when(noteService.getById(anyString())).thenReturn(note);
+        when(noteService.getById("1")).thenReturn(note);
 
-        String result = noteController.editNote("1", "N", "New Content");
-        Assertions.assertEquals(buildRedirectUrl("note/list?error=Title must contain at least 2 characters"), result);
+        Model model = new ConcurrentModel();
+        String result = noteController.editNote("1", "N", "New Content", model);
+
+        Assertions.assertEquals(buildRedirectUrl("note/list?error=Title must be at least 2 characters long"), result);
+        verify(noteService, never()).save(any(Note.class), anyString());
+    }
+
+    @Test
+    void testEditNoteControllerNoteNotFound() {
+        when(noteService.getById("1")).thenThrow(new IllegalArgumentException("Note not found"));
+
+        Model model = new ConcurrentModel();
+        String result = noteController.editNote("1", "New Title", "New Content", model);
+
+        Assertions.assertEquals(buildRedirectUrl("note/list?error=Note not found"), result);
+        verify(noteService, never()).save(any(Note.class), anyString());
+    }
+
+    @Test
+    void testEditNoteControllerGenericError() {
+        when(noteService.getById("1")).thenThrow(new RuntimeException("Some unexpected error"));
+
+        Model model = new ConcurrentModel();
+        String result = noteController.editNote("1", "New Title", "New Content", model);
+
+        Assertions.assertEquals(buildRedirectUrl("note/list?error=An error occurred"), result);
         verify(noteService, never()).save(any(Note.class), anyString());
     }
 

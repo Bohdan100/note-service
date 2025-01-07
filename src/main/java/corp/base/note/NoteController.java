@@ -1,10 +1,15 @@
 package corp.base.note;
 
 import org.springframework.stereotype.Controller;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.ui.Model;
 import org.springframework.web.servlet.ModelAndView;
 
 import static corp.base.constants.Constants.VERSION;
@@ -21,7 +26,7 @@ import java.util.NoSuchElementException;
 @Controller
 public class NoteController {
     private final NoteService noteService;
-    private final UserService   userService;
+    private final UserService userService;
 
     private String getCurrentUserEmail() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -49,19 +54,21 @@ public class NoteController {
 
     // POST http://localhost:8080/api/v1/note/add?title=someTitle&content=someContent
     @PostMapping("/add")
-    public String addNote(@RequestParam("title") String title, @RequestParam("content") String content) {
+    public String addNote(@ModelAttribute @Valid NoteDTO noteDto, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            // Генерируем URL с описанием ошибок
+            String errorMessage = bindingResult.getFieldErrors()
+                    .stream()
+                    .map(error -> error.getDefaultMessage())
+                    .findFirst()
+                    .orElse("Validation error");
+            return buildRedirectUrl("note/list?error=" + errorMessage);
+        }
         String userEmail = getCurrentUserEmail();
 
-        if (title == null || title.length() < 2) {
-            return buildRedirectUrl("note/list?error=Title must contain at least 2 characters");
-        }
-        if (content == null || content.isEmpty()) {
-            return buildRedirectUrl("note/list?error=No content");
-        }
-
         Note newNote = new Note();
-        newNote.setTitle(title);
-        newNote.setContent(content);
+        newNote.setTitle(noteDto.getTitle());
+        newNote.setContent(noteDto.getContent());
         noteService.save(newNote, userEmail);
 
         return buildRedirectUrl("note/list");
@@ -92,8 +99,7 @@ public class NoteController {
         } catch (NoSuchElementException e) {
             modelAndView.setViewName(buildRedirectUrl("note/list"));
             modelAndView.addObject("error", "Note not found");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             modelAndView.setViewName(buildRedirectUrl("note/list"));
             modelAndView.addObject("error", "An error occurred");
         }
@@ -104,28 +110,29 @@ public class NoteController {
     @PostMapping("/edit")
     public String editNote(@RequestParam("id") String id,
                            @RequestParam(name = "title", required = false) String title,
-                           @RequestParam(name = "content", required = false) String content) {
+                           @RequestParam(name = "content", required = false) String content,
+                           Model model) {
+        if ((title != null && title.length() < 2) || (content != null && content.isEmpty())) {
+            String errorMessage = (title != null && title.length() < 2)
+                    ? "Title must be at least 2 characters long"
+                    : "Content cannot be blank";
+            return buildRedirectUrl("note/list?error=" + errorMessage);
+        }
         try {
             Note note = noteService.getById(id);
-            if (title != null && !title.isEmpty()) {
-                if (title.length() < 2) {
-                    return buildRedirectUrl("note/list?error=Title must contain at least 2 characters");
-                }
+            if (title != null) {
                 note.setTitle(title);
             }
-
-            if (content != null && !content.isEmpty()) {
+            if (content != null) {
                 note.setContent(content);
-            } else {
-                return buildRedirectUrl("note/list?error=No content");
             }
 
             String userEmail = getCurrentUserEmail();
             noteService.save(note, userEmail);
+
         } catch (IllegalArgumentException e) {
             return buildRedirectUrl("note/list?error=Note not found");
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             return buildRedirectUrl("note/list?error=An error occurred");
         }
         return buildRedirectUrl("note/list");
@@ -160,9 +167,25 @@ public class NoteController {
     // POST  http://localhost:8080/api/v1/note/deleteByTitle?query=Some
     @PostMapping("/deleteByTitle")
     public String deleteNotesByTitle(@RequestParam("query") String query) {
-        String userEmail = getCurrentUserEmail();
-        noteService.deleteNotesByTitle(query, userEmail);
+        if (query == null || query.trim().isEmpty()) {
+            return buildRedirectUrl("note/list?error=Title cannot be empty");
+        }
+
+        try {
+            String userEmail = getCurrentUserEmail();
+            noteService.deleteNotesByTitle(query, userEmail);
+        } catch (Exception e) {
+            return buildRedirectUrl("note/list?error=An error occurred");
+        }
+
         return buildRedirectUrl("note/list");
+    }
+
+    // POST  http://localhost:8080/api/v1/note/admin/delete/6
+    @PostMapping("/admin/delete/{id}")
+    public String deleteUser(@PathVariable("id") Long id) {
+        userService.deleteUserById(id);
+        return buildRedirectUrl("note/admin");
     }
 
     // GET  http://localhost:8080/api/v1/note/admin
@@ -180,12 +203,4 @@ public class NoteController {
             return new ModelAndView(buildRedirectUrl("note/list"));
         }
     }
-
-    // POST  http://localhost:8080/api/v1/note/admin/delete/6
-    @PostMapping("/admin/delete/{id}")
-    public String deleteUser(@PathVariable("id") Long id) {
-        userService.deleteUserById(id);
-        return buildRedirectUrl("note/admin");
-    }
-
 }
