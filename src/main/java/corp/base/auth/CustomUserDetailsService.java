@@ -32,7 +32,7 @@ public class CustomUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
 
-        UserDetails allUserSecurityProperties = new UserDetails() {
+        return new UserDetails() {
             @Override
             public Collection<? extends GrantedAuthority> getAuthorities() {
                 return Arrays.stream(userSecurityData.getAuthority().split(","))
@@ -70,8 +70,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 return true;
             }
         };
-
-        return allUserSecurityProperties;
     }
 
     private UserSecurityData getByIdOrNull(String email) {

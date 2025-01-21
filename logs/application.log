@@ -1,70 +1,70 @@
-2025-01-08T00:18:57.157+02:00  INFO 15540 --- [note-service] [main] corp.base.NoteServiceApplication         : Starting NoteServiceApplication using Java 21.0.4 with PID 15540 (C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\classes\java\main started by Dell in C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service)
-2025-01-08T00:18:57.163+02:00  INFO 15540 --- [note-service] [main] corp.base.NoteServiceApplication         : No active profile set, falling back to 1 default profile: "default"
-2025-01-08T00:18:57.869+02:00  INFO 15540 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-01-08T00:18:57.925+02:00  INFO 15540 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 2 JPA repository interfaces.
-2025-01-08T00:18:58.516+02:00  INFO 15540 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-01-08T00:18:58.532+02:00  INFO 15540 --- [note-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-01-08T00:18:58.532+02:00  INFO 15540 --- [note-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
-2025-01-08T00:18:58.595+02:00  INFO 15540 --- [note-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-01-08T00:18:58.595+02:00  INFO 15540 --- [note-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1385 ms
-2025-01-08T00:18:58.817+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
-2025-01-08T00:18:58.817+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
-2025-01-08T00:18:58.817+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
-2025-01-08T00:18:58.817+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
-2025-01-08T00:18:58.817+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
-2025-01-08T00:18:58.829+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/Dell/Desktop/Java-projects/github-bohdan100-repo/note-service/build/resources/main/db/migration
-2025-01-08T00:18:58.829+02:00 DEBUG 15540 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\
-2025-01-08T00:18:58.829+02:00 DEBUG 15540 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\db\migration (db/migration)
-2025-01-08T00:18:58.829+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__create_user_note_tables.sql
-2025-01-08T00:18:58.829+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__insert_notes.sql
-2025-01-08T00:18:58.829+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
-2025-01-08T00:18:58.832+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__create_user_note_tables.sql
-2025-01-08T00:18:58.837+02:00  INFO 15540 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-01-08T00:18:59.188+02:00  INFO 15540 --- [note-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f2b584b
-2025-01-08T00:18:59.188+02:00  INFO 15540 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-01-08T00:18:59.228+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__insert_notes.sql
-2025-01-08T00:18:59.244+02:00  INFO 15540 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/note (MySQL 8.0)
-2025-01-08T00:18:59.244+02:00 DEBUG 15540 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
-2025-01-08T00:18:59.244+02:00 DEBUG 15540 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
-2025-01-08T00:18:59.244+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
-2025-01-08T00:18:59.244+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
-2025-01-08T00:18:59.276+02:00 DEBUG 15540 --- [note-service] [main] o.f.database.mysql.MySQLConnection       : Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
-2025-01-08T00:18:59.296+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
-2025-01-08T00:18:59.319+02:00 DEBUG 15540 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
-2025-01-08T00:18:59.323+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
-2025-01-08T00:18:59.323+02:00 DEBUG 15540 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
-2025-01-08T00:18:59.323+02:00 DEBUG 15540 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
-2025-01-08T00:18:59.323+02:00 DEBUG 15540 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
-2025-01-08T00:18:59.323+02:00 DEBUG 15540 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
-2025-01-08T00:18:59.357+02:00  INFO 15540 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.040s)
-2025-01-08T00:18:59.357+02:00 DEBUG 15540 --- [note-service] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `note`
-2025-01-08T00:18:59.371+02:00 DEBUG 15540 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
-2025-01-08T00:18:59.371+02:00  INFO 15540 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `note`: 2
-2025-01-08T00:18:59.383+02:00  INFO 15540 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Schema `note` is up to date. No migration necessary.
-2025-01-08T00:18:59.387+02:00 DEBUG 15540 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 33 of 60M
-2025-01-08T00:18:59.471+02:00  INFO 15540 --- [note-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-01-08T00:18:59.555+02:00  INFO 15540 --- [note-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2025-01-08T00:18:59.591+02:00  INFO 15540 --- [note-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-01-08T00:18:59.867+02:00  INFO 15540 --- [note-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-01-08T00:18:59.930+02:00  WARN 15540 --- [note-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-01-08T00:19:00.740+02:00  INFO 15540 --- [note-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-01-08T00:19:00.756+02:00  INFO 15540 --- [note-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-01-08T00:19:01.043+02:00  INFO 15540 --- [note-service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-01-08T00:19:01.596+02:00  WARN 15540 --- [note-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-01-08T00:19:01.615+02:00  WARN 15540 --- [note-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-01-08T00:19:02.147+02:00  INFO 15540 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-01-08T00:19:02.165+02:00  INFO 15540 --- [note-service] [main] corp.base.NoteServiceApplication         : Started NoteServiceApplication in 5.391 seconds (process running for 6.652)
-2025-01-08T00:19:14.562+02:00  INFO 15540 --- [note-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-01-08T00:19:14.562+02:00  INFO 15540 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-01-08T00:19:14.562+02:00  INFO 15540 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-01-08T00:19:23.885+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-01-21T16:41:52.240+02:00  INFO 17684 --- [note-service] [main] corp.base.NoteServiceApplication         : Starting NoteServiceApplication using Java 21.0.4 with PID 17684 (C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\classes\java\main started by Dell in C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service)
+2025-01-21T16:41:52.245+02:00  INFO 17684 --- [note-service] [main] corp.base.NoteServiceApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-01-21T16:41:52.868+02:00  INFO 17684 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-01-21T16:41:52.931+02:00  INFO 17684 --- [note-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+2025-01-21T16:41:53.533+02:00  INFO 17684 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-01-21T16:41:53.533+02:00  INFO 17684 --- [note-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-01-21T16:41:53.533+02:00  INFO 17684 --- [note-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.28]
+2025-01-21T16:41:53.597+02:00  INFO 17684 --- [note-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-01-21T16:41:53.597+02:00  INFO 17684 --- [note-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1322 ms
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@33909752 ...
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: file:/C:/Users/Dell/Desktop/Java-projects/github-bohdan100-repo/note-service/build/resources/main/db/migration
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning starting at classpath root in filesystem: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\
+2025-01-21T16:41:53.816+02:00 DEBUG 17684 --- [note-service] [main] i.s.c.FileSystemClassPathLocationScanner : Scanning for resources in path: C:\Users\Dell\Desktop\Java-projects\github-bohdan100-repo\note-service\build\resources\main\db\migration (db/migration)
+2025-01-21T16:41:53.832+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__create_user_note_tables.sql
+2025-01-21T16:41:53.832+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__insert_notes.sql
+2025-01-21T16:41:53.832+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2025-01-21T16:41:53.832+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V1__create_user_note_tables.sql
+2025-01-21T16:41:53.832+02:00  INFO 17684 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-01-21T16:41:54.134+02:00  INFO 17684 --- [note-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a36c83a
+2025-01-21T16:41:54.150+02:00  INFO 17684 --- [note-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-01-21T16:41:54.182+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.resource.ResourceNameValidator   : Validating V2__insert_notes.sql
+2025-01-21T16:41:54.200+02:00  INFO 17684 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:mysql://localhost:3306/note (MySQL 8.0)
+2025-01-21T16:41:54.200+02:00 DEBUG 17684 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Driver: MySQL Connector/J mysql-connector-j-8.3.0 (Revision: 805f872a57875f311cb82487efcfb070411a3fa0)
+2025-01-21T16:41:54.200+02:00 DEBUG 17684 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : DDL Transactions Supported: false
+2025-01-21T16:41:54.200+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Schemas: 
+2025-01-21T16:41:54.200+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.s.SchemaHistoryFactory           : Default schema: null
+2025-01-21T16:41:54.229+02:00 DEBUG 17684 --- [note-service] [main] o.f.database.mysql.MySQLConnection       : Disabled user variable reset as performance_schema.user_variables_by_thread cannot be queried (SQL State: 42000, Error Code: 1142)
+2025-01-21T16:41:54.234+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.i.c.SqlScriptCallbackFactory       : Scanning for SQL callbacks ...
+2025-01-21T16:41:54.245+02:00 DEBUG 17684 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Validating migrations ...
+2025-01-21T16:41:54.245+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2025-01-21T16:41:54.261+02:00 DEBUG 17684 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
+2025-01-21T16:41:54.261+02:00 DEBUG 17684 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
+2025-01-21T16:41:54.261+02:00 DEBUG 17684 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V1__create_user_note_tables.sql (filename: V1__create_user_note_tables.sql)
+2025-01-21T16:41:54.261+02:00 DEBUG 17684 --- [note-service] [main] o.f.core.internal.scanner.Scanner        : Filtering out resource: db/migration/V2__insert_notes.sql (filename: V2__insert_notes.sql)
+2025-01-21T16:41:54.288+02:00  INFO 17684 --- [note-service] [main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.034s)
+2025-01-21T16:41:54.293+02:00 DEBUG 17684 --- [note-service] [main] o.f.core.internal.command.DbSchemas      : Skipping creation of existing schema: `note`
+2025-01-21T16:41:54.297+02:00 DEBUG 17684 --- [note-service] [main] o.f.c.a.c.ClassicConfiguration           : CherryPickConfigurationExtension not found
+2025-01-21T16:41:54.297+02:00  INFO 17684 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Current version of schema `note`: 2
+2025-01-21T16:41:54.297+02:00  INFO 17684 --- [note-service] [main] o.f.core.internal.command.DbMigrate      : Schema `note` is up to date. No migration necessary.
+2025-01-21T16:41:54.309+02:00 DEBUG 17684 --- [note-service] [main] org.flywaydb.core.FlywayExecutor         : Memory usage: 33 of 68M
+2025-01-21T16:41:54.388+02:00  INFO 17684 --- [note-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-01-21T16:41:54.454+02:00  INFO 17684 --- [note-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2025-01-21T16:41:54.483+02:00  INFO 17684 --- [note-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-01-21T16:41:54.785+02:00  INFO 17684 --- [note-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-01-21T16:41:54.849+02:00  WARN 17684 --- [note-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-01-21T16:41:55.535+02:00  INFO 17684 --- [note-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-01-21T16:41:55.535+02:00  INFO 17684 --- [note-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-01-21T16:41:55.803+02:00  INFO 17684 --- [note-service] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-01-21T16:41:56.370+02:00  WARN 17684 --- [note-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-01-21T16:41:56.373+02:00  WARN 17684 --- [note-service] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-01-21T16:41:56.949+02:00  INFO 17684 --- [note-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-01-21T16:41:56.955+02:00  INFO 17684 --- [note-service] [main] corp.base.NoteServiceApplication         : Started NoteServiceApplication in 5.099 seconds (process running for 5.412)
+2025-01-21T16:42:27.712+02:00  INFO 17684 --- [note-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-01-21T16:42:27.712+02:00  INFO 17684 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-01-21T16:42:27.712+02:00  INFO 17684 --- [note-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-01-21T16:42:44.867+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
     SELECT
         name 
     FROM
         user 
     WHERE
         email = ?
-2025-01-08T00:19:23.960+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-01-21T16:42:44.928+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -77,7 +77,7 @@
             on u1_0.id=n1_0.user_id 
     where
         u1_0.email=?
-2025-01-08T00:19:23.973+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-01-21T16:42:44.936+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         u1_0.id,
         u1_0.authority,
@@ -88,7 +88,7 @@
         `user` u1_0 
     where
         u1_0.id=?
-2025-01-08T00:19:23.992+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-01-21T16:42:44.954+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
     select
         count(n1_0.id) 
     from
@@ -98,32 +98,14 @@
             on u1_0.id=n1_0.user_id 
     where
         u1_0.email=?
-2025-01-08T00:19:27.620+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id,
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        n1_0.id=?
-2025-01-08T00:19:29.554+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+2025-01-21T16:42:51.969+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
     SELECT
         name 
     FROM
         user 
     WHERE
         email = ?
-2025-01-08T00:19:29.560+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+2025-01-21T16:42:51.977+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -135,19 +117,9 @@
         `user` u1_0 
             on u1_0.id=n1_0.user_id 
     where
-        u1_0.email=?
-2025-01-08T00:19:29.562+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:19:29.565+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-21T16:42:51.994+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
     select
         count(n1_0.id) 
     from
@@ -156,33 +128,16 @@
         `user` u1_0 
             on u1_0.id=n1_0.user_id 
     where
-        u1_0.email=?
-2025-01-08T00:19:31.605+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id,
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        n1_0.id=?
-2025-01-08T00:19:35.803+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-21T16:42:54.664+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
     SELECT
         name 
     FROM
         user 
     WHERE
         email = ?
-2025-01-08T00:19:35.809+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+2025-01-21T16:42:54.669+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -194,8 +149,9 @@
         `user` u1_0 
             on u1_0.id=n1_0.user_id 
     where
-        u1_0.email=?
-2025-01-08T00:19:35.809+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-21T16:42:54.669+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
     select
         u1_0.id,
         u1_0.authority,
@@ -206,7 +162,7 @@
         `user` u1_0 
     where
         u1_0.id=?
-2025-01-08T00:19:35.809+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
+2025-01-21T16:42:54.669+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
     select
         count(n1_0.id) 
     from
@@ -215,8 +171,9 @@
         `user` u1_0 
             on u1_0.id=n1_0.user_id 
     where
-        u1_0.email=?
-2025-01-08T00:19:42.453+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+        lower(n1_0.title) like lower(?) escape '' 
+        and u1_0.email=?
+2025-01-21T16:42:58.031+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -234,48 +191,7 @@
             on u1_0.id=n1_0.user_id 
     where
         n1_0.id=?
-2025-01-08T00:19:45.179+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:19:45.179+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:19:45.179+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:19:45.188+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:19:48.955+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.837+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -293,25 +209,7 @@
             on u1_0.id=n1_0.user_id 
     where
         n1_0.id=?
-2025-01-08T00:19:56.076+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id,
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        n1_0.id=?
-2025-01-08T00:19:56.159+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.859+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
     update
         note 
     set
@@ -320,21 +218,21 @@
         user_id=? 
     where
         id=?
-2025-01-08T00:19:56.175+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.867+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
     SELECT
         * 
     FROM
         `user` 
     WHERE
         email = ?
-2025-01-08T00:19:56.200+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.902+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
     SELECT
         name 
     FROM
         user 
     WHERE
         email = ?
-2025-01-08T00:19:56.203+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.909+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -347,7 +245,7 @@
             on u1_0.id=n1_0.user_id 
     where
         u1_0.email=?
-2025-01-08T00:19:56.203+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.909+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
     select
         u1_0.id,
         u1_0.authority,
@@ -358,7 +256,7 @@
         `user` u1_0 
     where
         u1_0.id=?
-2025-01-08T00:19:56.208+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+2025-01-21T16:43:01.909+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
     select
         count(n1_0.id) 
     from
@@ -368,7 +266,7 @@
             on u1_0.id=n1_0.user_id 
     where
         u1_0.email=?
-2025-01-08T00:19:58.524+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
+2025-01-21T16:43:04.277+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -386,7 +284,7 @@
             on u1_0.id=n1_0.user_id 
     where
         n1_0.id=?
-2025-01-08T00:20:02.722+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.704+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -404,7 +302,7 @@
             on u1_0.id=n1_0.user_id 
     where
         n1_0.id=?
-2025-01-08T00:20:02.728+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.708+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
     update
         note 
     set
@@ -413,21 +311,21 @@
         user_id=? 
     where
         id=?
-2025-01-08T00:20:02.729+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.708+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
     SELECT
         * 
     FROM
         `user` 
     WHERE
         email = ?
-2025-01-08T00:20:02.753+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.725+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
     SELECT
         name 
     FROM
         user 
     WHERE
         email = ?
-2025-01-08T00:20:02.756+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.725+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -440,7 +338,7 @@
             on u1_0.id=n1_0.user_id 
     where
         u1_0.email=?
-2025-01-08T00:20:02.758+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.725+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
     select
         u1_0.id,
         u1_0.authority,
@@ -451,7 +349,7 @@
         `user` u1_0 
     where
         u1_0.id=?
-2025-01-08T00:20:02.762+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
+2025-01-21T16:43:07.733+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
     select
         count(n1_0.id) 
     from
@@ -461,55 +359,14 @@
             on u1_0.id=n1_0.user_id 
     where
         u1_0.email=?
-2025-01-08T00:20:17.747+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+2025-01-21T16:43:15.046+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
     SELECT
         name 
     FROM
         user 
     WHERE
         email = ?
-2025-01-08T00:20:17.756+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:20:17.760+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:20:17.766+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:20:26.531+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:20:26.541+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+2025-01-21T16:43:15.053+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
     select
         n1_0.id,
         n1_0.content,
@@ -530,7 +387,18 @@
             where
                 u2_0.email=?
         )
-2025-01-08T00:20:26.546+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+2025-01-21T16:43:15.056+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.authority,
+        u1_0.email,
+        u1_0.name,
+        u1_0.password 
+    from
+        `user` u1_0 
+    where
+        u1_0.id=?
+2025-01-21T16:43:15.061+02:00 DEBUG 17684 --- [note-service] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
     select
         count(n1_0.id) 
     from
@@ -544,269 +412,3 @@
             or lower(n1_0.content) like lower(?) escape ''
         ) 
         and u1_0.email=?
-2025-01-08T00:20:31.251+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:20:31.259+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        lower(n1_0.title) like lower(?) escape '' 
-        and u1_0.email=?
-2025-01-08T00:20:31.260+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        lower(n1_0.title) like lower(?) escape '' 
-        and u1_0.email=?
-2025-01-08T00:20:46.280+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:20:46.283+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:20:46.287+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:20:46.290+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:21:12.630+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
-    SELECT
-        * 
-    FROM
-        `user` 
-    WHERE
-        email = ?
-2025-01-08T00:21:12.634+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-9] org.hibernate.SQL                        : 
-    insert 
-    into
-        note
-        (content, title, user_id) 
-    values
-        (?, ?, ?)
-2025-01-08T00:21:12.659+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:21:12.659+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:21:12.659+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:21:12.669+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-10] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:21:20.621+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:21:20.624+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        lower(n1_0.title) like lower(?) escape '' 
-        and u1_0.email=?
-2025-01-08T00:21:20.629+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        lower(n1_0.title) like lower(?) escape '' 
-        and u1_0.email=?
-2025-01-08T00:21:50.096+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
-    SELECT
-        * 
-    FROM
-        `user` 
-    WHERE
-        email = ?
-2025-01-08T00:21:50.098+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
-    insert 
-    into
-        note
-        (content, title, user_id) 
-    values
-        (?, ?, ?)
-2025-01-08T00:21:50.120+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:21:50.120+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:21:50.120+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:21:50.128+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:21:55.407+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
-    delete n1_0 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        lower(n1_0.title) like lower(?) escape '' 
-        and u1_0.email=?
-2025-01-08T00:21:55.425+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    SELECT
-        name 
-    FROM
-        user 
-    WHERE
-        email = ?
-2025-01-08T00:21:55.425+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        n1_0.id,
-        n1_0.content,
-        n1_0.title,
-        n1_0.user_id 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?
-2025-01-08T00:21:55.431+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        u1_0.id,
-        u1_0.authority,
-        u1_0.email,
-        u1_0.name,
-        u1_0.password 
-    from
-        `user` u1_0 
-    where
-        u1_0.id=?
-2025-01-08T00:21:55.433+02:00 DEBUG 15540 --- [note-service] [http-nio-8080-exec-8] org.hibernate.SQL                        : 
-    select
-        count(n1_0.id) 
-    from
-        note n1_0 
-    join
-        `user` u1_0 
-            on u1_0.id=n1_0.user_id 
-    where
-        u1_0.email=?

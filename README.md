@@ -50,16 +50,6 @@ Before running the application, follow these steps to set up the database:
        GRANT SUPER ON *.* TO 'admin2'@'%';
        ```
 
-    4. Check that user has the required ownership:
-       ```sql
-       SHOW GRANTS FOR 'admin2'@'%';
-       ```
-
-    5. Connect to the newly created database:
-       ```sql
-       USE note;
-       ```
-
 3. **Connect to the Database**  
    To connect to the `note` database as the `admin2` user, use the following command in the terminal:
    ```bash

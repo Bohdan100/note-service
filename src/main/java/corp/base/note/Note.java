@@ -3,12 +3,12 @@ package corp.base.note;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
-import corp.base.auth.User;
+import corp.base.user.User;
 
-@Table(name = "note")
 @Entity
 @Data
 @ToString(exclude = "user")
+@Table(name = "note")
 public class Note {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

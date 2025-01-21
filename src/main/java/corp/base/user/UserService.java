@@ -4,7 +4,6 @@ import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 import jakarta.transaction.Transactional;
 
-import corp.base.auth.User;
 import java.util.List;
 
 @Service

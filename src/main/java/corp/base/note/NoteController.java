@@ -1,8 +1,8 @@
 package corp.base.note;
 
 import org.springframework.stereotype.Controller;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import jakarta.validation.Valid;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -15,15 +15,15 @@ import org.springframework.web.servlet.ModelAndView;
 import static corp.base.constants.Constants.VERSION;
 import static corp.base.helpers.Redirect.buildRedirectUrl;
 
-import corp.base.auth.User;
+import corp.base.user.User;
 import corp.base.user.UserService;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 
+@Controller
 @RequiredArgsConstructor
 @RequestMapping(VERSION + "note")
-@Controller
 public class NoteController {
     private final NoteService noteService;
     private final UserService userService;

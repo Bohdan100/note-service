@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Assertions;
 import corp.base.note.Note;
 import corp.base.note.NoteRepository;
 import corp.base.note.NoteService;
-import corp.base.auth.User;
+import corp.base.user.User;
 import corp.base.user.UserRepository;
 
 import java.util.Collections;

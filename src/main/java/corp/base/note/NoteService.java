@@ -1,10 +1,10 @@
 package corp.base.note;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
 import jakarta.transaction.Transactional;
 
-import corp.base.auth.User;
+import corp.base.user.User;
 import corp.base.user.UserService;
 
 import java.io.IOException;

@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Assertions;
 
 import corp.base.user.UserService;
 import corp.base.user.UserRepository;
-import corp.base.auth.User;
+import corp.base.user.User;
 
 import java.util.Collections;
 import java.util.List;
